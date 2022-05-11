@@ -1,23 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+
+// import composants
+import Prenom from './Components/Prenom';
+import Nom from './Components/Nom/';
+
+// déclaration des variables
+const classe = [
+  {
+  name: 'NameToto',
+  firstname: 'firstnameToto'
+},
+{
+  name: 'NameTata',
+  firstname: 'firstnameTata'
+},
+{
+  name: 'NameTiti',
+  firstname: 'firstnameTiti'
+}
+]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Ma classe: 
+      <div className='containerClasse'>
+      {classe.map(eleve => {
+        return (
+          <div className='containerEleve'>
+            Élève : 
+          <Prenom propsFirstname={eleve.firstname}/>
+          <Nom propsName={eleve.name}/>
+          </div>
+        )
+      })}
+      </div>
+
     </div>
   );
 }
