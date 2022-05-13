@@ -37,6 +37,13 @@ function App() {
           // je retourne les élève un à un
           return (
             <div key={index} className="containerEleve">
+              <div
+                onClick={()=>{
+                  const classCopy = [...classe]
+                  classCopy.splice(index,1)
+                  setClasse(classCopy)
+                }}
+              >x</div>
               Élève :
               <Prenom propsFirstname={eleve.firstname} />
               <Nom propsName={eleve.name} />
