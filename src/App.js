@@ -34,25 +34,25 @@ function App() {
           // On boucle sur le state classe pour récupérer tous les élèves
           // grâce à un map
           // En plus, on ajout le paramètre index, afin d'avoir
-          // l'index de chaque élève dans le tableau. 
+          // l'index de chaque élève dans le tableau.
           classe.map((eleve, index) => {
             // je retourne les élève un à un
             return (
               <div key={index} className="containerEleve">
                 <div
                   className="eraserCross"
-                  onClick={()=>{
+                  onClick={() => {
                     // 1- On ne peut pas modifier le state directement
                     // Il faut donc obligatoirement en faire une VRAIE copie
-                    // nb: on ne peut pas faire const classeCopy = classe ! 
-                    const classeCopy = [...classe]
-                    
+                    // nb: on ne peut pas faire const classeCopy = classe !
+                    const classeCopy = [...classe];
+
                     // 2- On opère notre modification sur la copie:
                     // en l'occurence, on enlève l'élève voulu
-                    classeCopy.splice(index,1)
+                    classeCopy.splice(index, 1);
                     // 3- On met à jour notre state classe avec la copie
                     // modifiée
-                    setClasse(classeCopy)
+                    setClasse(classeCopy);
                   }}
                 >
                   x
@@ -84,16 +84,16 @@ function App() {
         </div>
         <div className="styleNameInput">
           <div className="inputContainer">
-          <label className="inputLabel">Nom</label>
-          <input
-            type="text"
-            placeholder="Entrez un nom"
-            value={newStudentName}
-            onChange={(event) => {
-              // je modifie newStudentName grâce à mon setNewStudentName
-              setNewStudentName(event.target.value);
-            }}
-          />
+            <label className="inputLabel">Nom</label>
+            <input
+              type="text"
+              placeholder="Entrez un nom"
+              value={newStudentName}
+              onChange={(event) => {
+                // je modifie newStudentName grâce à mon setNewStudentName
+                setNewStudentName(event.target.value);
+              }}
+            />
           </div>
           <div>{newStudentName}</div>
         </div>
@@ -101,7 +101,7 @@ function App() {
           onClick={() => {
             //1 - On fait une VRAIE copie de classe
             //car on ne peut pas modifier un state directement
-            // nb: on ne peut pas faire const classeCopy = classe ! 
+            // nb: on ne peut pas faire const classeCopy = classe !
             const classCopy = [...classe];
             //2 - On ajoute un élèvement à classe
             // grâce aux states newStudentName & newStudentFirstname
