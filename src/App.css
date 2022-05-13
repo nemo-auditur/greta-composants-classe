@@ -10,19 +10,42 @@
   border: 1px solid blue;
 }
 
+/* Container de la classe */
 .containerClasse {
   display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
   color: lightgreen;
   border: 1px solid lightgreen;
   padding: 5px;
   margin: 5px;
 }
 
+/* Container d'un élève */
 .containerEleve {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: lightblue;
   border: 1px solid lightblue;
   padding: 5px;
   margin: 5px;
+  height:170px;
+  width: 250px;
+}
+
+.containerEleve input[type=text] {
+    outline: none;
+    border-radius: 5px;
+    border: 0;
+    width: 120px;
+}
+.eraserCross{
+  position: absolute;
+  top: 0;
+  right: 5px;
 }
 
 .styleFirstName {
@@ -33,14 +56,38 @@
   display: flex;
 }
 
-.styleName {
+/* styling des inputs */
+.styleFirstNameInput div:empty:after{
+  content:'Aucune donnée'
+}
+
+.styleFirstNameInput {
+  color: yellow;
+  border: 1px solid yellow;
+  padding: 5px;
+  margin:5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.styleNameInput div:empty:after{
+  content:'Aucune donnée'
+}
+
+.styleNameInput {
   color: red;
   border: 1px solid red;
   padding: 5px;
   margin: 5px;
   display: flex;
+  flex-direction: column;
 }
 
-.inputLabel {
+.inputContainer {
+  display: flex;
+  flex-direction: center;
+}
+
+.inputContainer label{
   min-width: 100px;
 }
