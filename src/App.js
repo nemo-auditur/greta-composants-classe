@@ -43,8 +43,10 @@ function App() {
                   className="eraserCross"
                   onClick={()=>{
                     // 1- On ne peut pas modifier le state directement
-                    // Il faut donc obligatoirement en faire une copie
+                    // Il faut donc obligatoirement en faire une VRAIE copie
+                    // nb: on ne peut pas faire const classeCopy = classe ! 
                     const classeCopy = [...classe]
+                    
                     // 2- On opère notre modification sur la copie:
                     // en l'occurence, on enlève l'élève voulu
                     classeCopy.splice(index,1)
@@ -99,6 +101,7 @@ function App() {
           onClick={() => {
             //1 - On fait une VRAIE copie de classe
             //car on ne peut pas modifier un state directement
+            // nb: on ne peut pas faire const classeCopy = classe ! 
             const classCopy = [...classe];
             //2 - On ajoute un élèvement à classe
             // grâce aux states newStudentName & newStudentFirstname
